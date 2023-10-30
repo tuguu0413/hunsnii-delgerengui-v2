@@ -10,24 +10,39 @@
 </head>
 
 <body>
+  
   <div id="back_ground_edit">
+    <div id="output"></div>
+
+  <form>
+    <input type="text" id="userInput" placeholder="Enter text">
+    <button type="button" id="createButton">Create Paragraph</button>
+  </form>
     
     <button id="darkModeButton">Бараан горим</button>
-    
-    <h1>Хүнсний орц найрлага</h1>
-    <div class="slider-container">
 
-          <div class="slider-slide">
-            <img src="images/potato.jpg"  alt="Image 1">
-          </div>
-          <div class="slider-slide"> 
-            <img src="images/carrot.jpg"  alt="Image 2">
-          </div>
-          <div class="slider-slide">
-            <img src="images/cabbage.jpg"  alt="Image 3">
-          </div>
-            <button class="slider-button slider-button-prev" onclick="changeSlide(-1)">&#9664; Previous</button>
-            <button class="slider-button slider-button-next" onclick="changeSlide(1)">Next &#9654;</button>      
+    <div class="container">
+
+      <h1>Хүнсний орц найрлага</h1>
+
+      <table>
+        <tr>
+          <th>Төмс</th>
+          <th>Лууван</th>
+          <th>Байцаа</th>
+        </tr>
+        <tr>
+          <td id="potato">
+            <img src="images/potato.jpg"><br>
+          </td>
+          <td id="carrot">
+            <img src="images/carrot.jpg"><br>
+          </td>
+          <td id="cabbage">
+            <img src="images/cabbage.jpg"><br>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 
@@ -84,6 +99,7 @@
           байдаг. Байцаа буцалгаж,
           усаар нүүрээ угаах нь арьсыг тослог, үхсэн эсээс богино хугацаанд цэвэрлэдэг. </p>
         <h3><a href="https://en.wikipedia.org/wiki/Cabbage">Дэлгэрэнгүй</a></h3>
+      </div>
     </div>
   </div>
 

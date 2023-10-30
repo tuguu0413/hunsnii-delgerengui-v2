@@ -85,7 +85,7 @@ td img:hover {
 #darkModeButton:hover {
     background-color: #555;
 }
-.slider-container {
+  .slider-container {
     max-width: 600px;
     margin: 0 auto;
     position: relative;
