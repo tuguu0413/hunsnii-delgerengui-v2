@@ -85,3 +85,31 @@ td img:hover {
 #darkModeButton:hover {
     background-color: #555;
 }
+.slider-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .slider-slide {
+    display: none;
+    width: 100%;
+  }
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .slider-button-prev {
+    left: 0;
+  }
+
+  .slider-button-next {
+    right: 0;
+  }
