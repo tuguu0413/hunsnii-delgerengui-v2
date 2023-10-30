@@ -37,3 +37,17 @@ function toggleDarkMode() {
 }
 
 document.getElementById('darkModeButton').addEventListener('click', toggleDarkMode);
+function createParagraph() {
+    var userInput = document.getElementById("userInput").value;
+    if (userInput.trim() === "") {
+      alert("Please enter some text.");
+      return;
+    }
+
+    var newParagraph = document.createElement("p");
+    newParagraph.textContent = userInput;
+
+    document.getElementById("output").appendChild(newParagraph);
+    document.getElementById("userInput").value = "";
+  }
+  document.getElementById("createButton").addEventListener("click", createParagraph);
