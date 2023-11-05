@@ -12,21 +12,44 @@
     function additem() {
       var selectElement = document.getElementById("select");
       var button = document.getElementById("selectdetector");
-      button.addEventListener("click", function() {
-            var selectedOption = selectElement.options[selectElement.selectedIndex];
-            console.log("Selected item is " + selectedOption.value);
-        });
+      button.addEventListener("click", function () {
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        console.log("Selected item is " + selectedOption.value);
+        // var husnegt = document.getElementById("vegetable");
+        // var newrow = husnegt.insertRow(husnegt.rows.length + 1);
+        // var newcell = newrow.insertCell(1);
+        // newcell.textcontent = selectedOption.value;
+
+        // var pictureoffood = newrow.insertCell(2);
+        // var newimage = document.createElement("newimage");
+        // newimage.src = "images/bellpepper.jpg";
+        // newimage.alt = "Vegetable";
+        // pictureoffood.appendChild(newimage);
+      });
     }
   </script>
 
   <body>
     <div id="back_ground_edit">
       <button id="lightModeButton">Гэрэлтэй горим</button>
-
-      <div class="container">
+      <div class="outside-div">
         <h1>Хүнсний орц найрлага</h1>
+        <div class="grid-container">
+          <div class="grid-item">
+            <h2>Төмс</h2>
+            <img class="div-image" src="../images/darkpotato.jpg" />
+          </div>
 
-        <table>
+          <div class="grid-item">
+            <h2>Лууван</h2>
+            <img class="div-image" src="../images/darkcarrot.jpg" />
+          </div>
+
+          <div class="grid-item">
+            <h2>Байцаа</h2>
+            <img class="div-image" src="../images/darkcabbage.jpg" />
+          </div>
+          <!-- <table id="vegetable">
           <tr>
             <th>Төмс</th>
             <th>Лууван</th>
@@ -37,19 +60,21 @@
             <td id="carrot"><img src="../images/darkcarrot.jpg" /><br /></td>
             <td id="cabbage"><img src="../images/darkcabbage.jpg" /><br /></td>
           </tr>
-        </table>
-
+        </table> -->
+        </div>
         <select id="select" name="other_list">
-          <option value="onion">Сонгино</option>
-          <option value="garlic">Сармис</option>
-          <option value="spinach">Бууцай</option>
-          <option value="pumpkin">Хулуу</option>
-          <option value="mushroom">Мөөг</option>
-          <option value="chile">Халуун чинжүү</option>
-          <option value="pepper">Амтат чинжүү</option>
-        </select>
-        <button id="selectdetector" onclick="additem()">Нэмэх</button>
+        <option value="onion">Сонгино</option>
+        <option value="garlic">Сармис</option>
+        <option value="spinach">Бууцай</option>
+        <option value="pumpkin">Хулуу</option>
+        <option value="mushroom">Мөөг</option>
+        <option value="chile">Халуун чинжүү</option>
+        <option value="pepper">Амтат чинжүү</option>
+      </select>
+      <button id="selectdetector" onclick="additem()">Нэмэх</button>
       </div>
+
+      
     </div>
 
     <div id="dialog" class="dialog">
