@@ -10,9 +10,9 @@
 
   <body>
     <div id="back_ground_edit">
-      <button id="lightModeButton">Гэрэлтэй горим</button>
+      <button id="lightModeButton" onclick="toggle()">Горим солих</button>
       <div class="outside-div">
-        <h1>Хүнсний орц найрлага</h1>
+        <h1 class="h1">Хүнсний орц найрлага</h1>
         <div class="grid-container">
           <div class="grid-item">
             <h2>Төмс</h2>
@@ -142,6 +142,29 @@
 </html>
 
 <script>
+
+darkmode = true;
+function toggle() {
+  if (darkmode == true) {
+    document.getElementsByClassName("outside-div")[0].style.background = "rgba(255, 255, 255, 0.7)";
+    document.getElementsByClassName("h1")[0].style.color = "black";
+
+    // var gridlist = document.getElementsByClassName("grid-item");
+    // for (i=0; gridlist.length > i; i++) {
+    //   gridlist[i].style.background = "white";
+    // };
+    darkmode = false;
+  } else {
+    document.getElementsByClassName("outside-div")[0].style.background = "rgba(0, 0, 0, 0.7)";
+    document.getElementsByClassName("h1")[0].style.color = "white";
+    // var gridlist = document.getElementsByClassName("grid-item");
+    // for (i=0; gridlist.length > i; i++) {
+    //   gridlist[i].style.background = "black";
+    // };
+    darkmode = true;
+  }
+}
+
   function additem() {
     selectElement = document.getElementById("select");
     button = document.getElementById("selectdetector");
@@ -205,6 +228,7 @@
       gridcontainer[0].appendChild(newitem);
 
       selectElement = "";
+      
 
 
       // var husnegt = document.getElementById("vegetable");
