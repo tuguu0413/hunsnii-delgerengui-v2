@@ -88,6 +88,22 @@ td img:hover {
     background-color: #969696;
 }
 
+
+#countbutton {
+    position: fixed;
+    bottom: 10px; right: 10px;
+    background-color: #bebebe;
+    color: #000;
+    border-radius: 20px; border-color: #000;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: clamp(5px, 5vw, 10px);
+}
+
+#countbutton:hover {
+    background-color: #969696;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

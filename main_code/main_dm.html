@@ -53,6 +53,7 @@
         </select>
         <button id="selectdetector" onclick="additem()">Нэмэх</button>
       </div>
+      <button id="countbutton" onclick="countitems()">Нийт хүнсний бүтээгдэхүүнийг тоолох</button>
     </div>
 
     <div id="dialog" class="dialog">
@@ -242,5 +243,10 @@ function toggle() {
       // newimage.alt = "Vegetable";
       // pictureoffood.appendChild(newimage);
     });
+  }
+
+  function countitems() {
+    count = document.getElementsByClassName("grid-item").length
+    alert("Та нийт " + count + " ширхэг хүнсний бүтээгдэхүүн оруулсан байна.")
   }
 </script>
