@@ -8,26 +8,7 @@
     <script src="script_dm.js" defer></script>
   </head>
 
-  <script>
-    function additem() {
-      var selectElement = document.getElementById("select");
-      var button = document.getElementById("selectdetector");
-      button.addEventListener("click", function () {
-        var selectedOption = selectElement.options[selectElement.selectedIndex];
-        console.log("Selected item is " + selectedOption.value);
-        // var husnegt = document.getElementById("vegetable");
-        // var newrow = husnegt.insertRow(husnegt.rows.length + 1);
-        // var newcell = newrow.insertCell(1);
-        // newcell.textcontent = selectedOption.value;
-
-        // var pictureoffood = newrow.insertCell(2);
-        // var newimage = document.createElement("newimage");
-        // newimage.src = "images/bellpepper.jpg";
-        // newimage.alt = "Vegetable";
-        // pictureoffood.appendChild(newimage);
-      });
-    }
-  </script>
+  
 
   <body>
     <div id="back_ground_edit">
@@ -37,18 +18,21 @@
         <div class="grid-container">
           <div class="grid-item">
             <h2>Төмс</h2>
-            <img class="div-image" src="../images/darkpotato.jpg" />
+            <img class="div-image" id="potato" src="../images/darkpotato.jpg" />
           </div>
 
           <div class="grid-item">
             <h2>Лууван</h2>
-            <img class="div-image" src="../images/darkcarrot.jpg" />
+            <img class="div-image" id="carrot" src="../images/darkcarrot.jpg" />
           </div>
 
           <div class="grid-item">
             <h2>Байцаа</h2>
-            <img class="div-image" src="../images/darkcabbage.jpg" />
+            <img class="div-image" id="cabbage" src="../images/darkcabbage.jpg" />
           </div>
+
+
+
           <!-- <table id="vegetable">
           <tr>
             <th>Төмс</th>
@@ -162,3 +146,41 @@
     </div>
   </body>
 </html>
+
+<script>
+    function additem() {
+      var selectElement = document.getElementById("select");
+      var button = document.getElementById("selectdetector");
+      button.addEventListener("click", function () {
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        console.log("Selected item is " + selectedOption.value);
+
+        var gridcontainer = document.getElementsByClassName("grid-container");
+        var newitem = document.createElement("div");
+        newitem.className = "grid-item";
+
+        var itemname = document.createElement("h2");
+        itemname.textContent = selectedOption.value;
+
+        var itemimage = document.createElement("img");
+        itemimage.className = "div-image";
+        itemimage.src = "../images/bellpepper.jpg";
+        itemimage.alt = "New item";
+
+        newitem.appendChild(itemname);
+        newitem.appendChild(itemimage);
+        gridcontainer[0].appendChild(newitem);
+
+        // var husnegt = document.getElementById("vegetable");
+        // var newrow = husnegt.insertRow(husnegt.rows.length + 1);
+        // var newcell = newrow.insertCell(1);
+        // newcell.textcontent = selectedOption.value;
+
+        // var pictureoffood = newrow.insertCell(2);
+        // var newimage = document.createElement("newimage");
+        // newimage.src = "images/bellpepper.jpg";
+        // newimage.alt = "Vegetable";
+        // pictureoffood.appendChild(newimage);
+      });
+    }
+  </script>
