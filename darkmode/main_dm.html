@@ -8,8 +8,6 @@
     <script src="script_dm.js" defer></script>
   </head>
 
-  
-
   <body>
     <div id="back_ground_edit">
       <button id="lightModeButton">Гэрэлтэй горим</button>
@@ -31,8 +29,6 @@
             <img class="div-image" id="cabbage" src="../images/cabbage.png" />
           </div>
 
-
-
           <!-- <table id="vegetable">
           <tr>
             <th>Төмс</th>
@@ -47,18 +43,16 @@
         </table> -->
         </div>
         <select id="select" name="other_list">
-        <option value="onion">Сонгино</option>
-        <option value="garlic">Сармис</option>
-        <option value="spinach">Бууцай</option>
-        <option value="pumpkin">Хулуу</option>
-        <option value="mushroom">Мөөг</option>
-        <option value="chile">Халуун чинжүү</option>
-        <option value="pepper">Амтат чинжүү</option>
-      </select>
-      <button id="selectdetector" onclick="additem()">Нэмэх</button>
+          <option value="onion" id="1">Сонгино</option>
+          <option value="garlic" id="2">Сармис</option>
+          <option value="spinach" id="3">Бууцай</option>
+          <option value="pumpkin" id="4">Хулуу</option>
+          <option value="mushroom" id="5">Мөөг</option>
+          <option value="chile" id="6">Халуун чинжүү</option>
+          <option value="pepper" id="7">Амтат чинжүү</option>
+        </select>
+        <button id="selectdetector" onclick="additem()">Нэмэх</button>
       </div>
-
-      
     </div>
 
     <div id="dialog" class="dialog">
@@ -148,39 +142,78 @@
 </html>
 
 <script>
-    function additem() {
-      var selectElement = document.getElementById("select");
-      var button = document.getElementById("selectdetector");
-      button.addEventListener("click", function () {
-        var selectedOption = selectElement.options[selectElement.selectedIndex];
-        console.log("Selected item is " + selectedOption.value);
+  function additem() {
+    selectElement = document.getElementById("select");
+    button = document.getElementById("selectdetector");
+    button.addEventListener("click", function () {
+      selectedOption = selectElement.options[selectElement.selectedIndex];
+      console.log("Selected item is " + selectedOption.value);
 
-        var gridcontainer = document.getElementsByClassName("grid-container");
-        var newitem = document.createElement("div");
-        newitem.className = "grid-item";
+      gridcontainer = document.getElementsByClassName("grid-container");
+      newitem = document.createElement("div");
+      newitem.className = "grid-item";
 
-        var itemname = document.createElement("h2");
-        itemname.textContent = selectedOption.value;
+      itemname = document.createElement("h2");
+      itemimage = document.createElement("img");
+      itemimage.className = "div-image";
+      itemimage.alt = "New item";
+      idnumber = parseInt(selectedOption.id);
+      console.log(idnumber);
 
-        var itemimage = document.createElement("img");
-        itemimage.className = "div-image";
-        itemimage.src = "../images/bellpepper.png";
-        itemimage.alt = "New item";
+      switch (idnumber) {
+        case 1:
+          itemname.textContent = "Сонгино";
+          itemimage.src = "../images/onion.png";
+          break;
+        case 2:
+          itemname.textContent = "Сармис";
+          itemimage.src = "../images/garlic.png";
+          break;
+        case 3:
+          itemname.textContent = "Бууцай";
+          itemimage.src = "../images/spinach.png";
+          break;
+        case 4:
+          itemname.textContent = "Хулуу";
+          itemimage.src = "../images/pumpkin.png";
+          break;
+        case 5:
+          itemname.textContent = "Мөөг";
+          itemimage.src = "../images/mushroom.png";
+          break;
+        case 6:
+          itemname.textContent = "Халуун чинжүү";
+          itemimage.src = "../images/chile.png";
+          break;
+        case 7:
+          itemname.textContent = "Амтат чинжүү";
+          itemimage.src = "../images/bellpepper.png";
+          break;
+      }
 
-        newitem.appendChild(itemname);
-        newitem.appendChild(itemimage);
-        gridcontainer[0].appendChild(newitem);
+      // if ((idnumber = 1)) {
+      // } else if ((idnumber = 2)) {
+      // } else if ((idnumber = 3)) {
+      // } else if ((idnumber = 4)) {
+      // } else if ((idnumber = 5)) {
+      // } else if ((idnumber = 6)) {
+      // } else {
+      // }
 
-        // var husnegt = document.getElementById("vegetable");
-        // var newrow = husnegt.insertRow(husnegt.rows.length + 1);
-        // var newcell = newrow.insertCell(1);
-        // newcell.textcontent = selectedOption.value;
+      newitem.appendChild(itemname);
+      newitem.appendChild(itemimage);
+      gridcontainer[0].appendChild(newitem);
 
-        // var pictureoffood = newrow.insertCell(2);
-        // var newimage = document.createElement("newimage");
-        // newimage.src = "images/bellpepper.jpg";
-        // newimage.alt = "Vegetable";
-        // pictureoffood.appendChild(newimage);
-      });
-    }
-  </script>
+      // var husnegt = document.getElementById("vegetable");
+      // var newrow = husnegt.insertRow(husnegt.rows.length + 1);
+      // var newcell = newrow.insertCell(1);
+      // newcell.textcontent = selectedOption.value;
+
+      // var pictureoffood = newrow.insertCell(2);
+      // var newimage = document.createElement("newimage");
+      // newimage.src = "images/bellpepper.jpg";
+      // newimage.alt = "Vegetable";
+      // pictureoffood.appendChild(newimage);
+    });
+  }
+</script>
